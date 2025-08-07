@@ -5,6 +5,9 @@ class Favourite extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('catalog'));
+    return Scaffold(
+      appBar: AppBar(title: Text('favourites')),
+      body: Center(child: Text('favourites')),
+    );
   }
 }

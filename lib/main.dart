@@ -31,13 +31,14 @@ class MyHomePage extends StatefulWidget {
 
 class MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
-  List<Widget> screens = [Catalog(), Favourite(), Profile()];
+  List<Widget> screens = [MyHomePage(), Catalog(), Favourite(), Profile()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black87,
       appBar: AppBar(
+        foregroundColor: Colors.white,
         backgroundColor: Colors.black87,
         toolbarHeight: 100,
         title: Container(
@@ -77,6 +78,7 @@ class MyHomePageState extends State<MyHomePage> {
       body: CustomBody(),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
+        selectedItemColor: Colors.black12,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.home, color: Colors.grey),
@@ -84,7 +86,7 @@ class MyHomePageState extends State<MyHomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.square_grid_2x2, color: Colors.grey),
-            label: 'Settings',
+            label: 'Catalog',
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.heart, color: Colors.grey),
@@ -99,10 +101,6 @@ class MyHomePageState extends State<MyHomePage> {
         onTap: (index) {
           setState(() {
             _selectedIndex = index;
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => screens[index]),
-            );
           });
         },
       ),

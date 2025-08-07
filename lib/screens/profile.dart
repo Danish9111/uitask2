@@ -5,6 +5,9 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('catalog'));
+    return Scaffold(
+      appBar: AppBar(title: Text('profile')),
+      body: Center(child: Text('profile')),
+    );
   }
 }
